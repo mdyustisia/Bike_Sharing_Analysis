@@ -11,7 +11,6 @@ pip install -r requirements.txt
 ## Setup Environment - Shell/Terminal
 
 ```
-mkdir submission_javanez
 cd submission_javanez
 pipenv install
 pipenv shell
