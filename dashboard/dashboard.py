@@ -39,18 +39,18 @@ season_sharing = filtered_df.groupby('season')['cnt'].sum().sort_values(ascendin
 
 fig, ax = plt.subplots(figsize=(10, 5))
 season_sharing.plot(kind='barh', ax=ax, color=['#66B3FF', '#D3D3D3', '#D3D3D3', '#D3D3D3'])
-ax.set_title('Bike Rentals by Season')
+ax.set_title('Bike Sharing by Season')
 ax.set_ylabel(None)
 ax.invert_yaxis()
 st.pyplot(fig)
 
-# Line Chart: Bike Rentals by Month
-st.header(f'Bike Rentals by Month in {year}')
+# Line Chart: Bike Sharing by Month
+st.header(f'Bike Sharing by Month in {year}')
 monthly_sharing = df[df['year'] == year].groupby('month')['cnt'].sum()
 
 fig, ax = plt.subplots(figsize=(10, 5))
 monthly_sharing.plot(kind='line', marker='o', color='#66B3FF', ax=ax)
-ax.set_title(f'Bike Rentals by Month in {year}')
+ax.set_title(f'Bike Sharing by Month in {year}')
 ax.set_xlabel(None)
 ax.set_ylabel(None)
 ax.set_xticks(range(1, 13))
@@ -62,7 +62,7 @@ colors_ = ['#66B3FF', '#FD151B', '#FFB30F', '#25FF50']
 st.header(f'Temperature vs. Bike Sharing in {year}')
 fig, ax = plt.subplots(figsize=(10, 5))
 sns.scatterplot(data=filtered_df, x='temp', y='cnt', hue='season', palette=colors_, ax=ax)
-ax.set_title('Temperature vs. Total Bike Rentals')
+ax.set_title('Temperature vs. Total Bike Sharing')
 ax.set_xlabel(None)
 ax.set_ylabel(None)
 st.pyplot(fig)
